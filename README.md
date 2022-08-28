@@ -29,7 +29,9 @@ The database was initialized in MySQL Workbench after the schema files were set 
 * MySQL Workbench
 
 ## Video Example
-[MySQL Employee Management System](https://drive.google.com/file/d/1_20AT6cerIgXbkMycODh86IQtiO5k_qQ/view)
+[MySQL Employee Management System](https://drive.google.com/file/d/1UCL_nxEFIqdGRJU1OhpODClh0S9xWvKt/view?usp=sharing)
+
+Video recording also saved in Assets folder of SQL-Employee-Tracker Repository.
 
 ## Sources
 Application enabled using the following sources:
