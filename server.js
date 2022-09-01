@@ -22,7 +22,7 @@ startApp = () => {
         {
             name: 'initialInquiry',
             type: 'rawlist',
-            message: 'Welcome to the employee management program. What would you like to do?',
+            message: 'Welcome to Employee Tracker, What would you like to do?',
             choices: ['View all departments', 'View all roles', 'View all employees', 'View all employees by manager', 'Add a department', 'Add a role', 'Add an employee', 'Update employee\'s role', 'Update employee\'s manager', 'Remove a department', 'Remove a role', 'Remove an employee', 'View total salary of department', 'Exit program']
         }
     ]).then((response) => {
@@ -68,7 +68,7 @@ startApp = () => {
             break;
             case 'Exit program':
                 connection.end();
-                console.log('\n You have exited the employee management program. Thanks for using! \n');
+                console.log('\n You have exited the Employee Tracker \n');
                 return;
             default:
                 break;
@@ -136,7 +136,7 @@ addADepartment = () => {
         },
         (err, res) => {
             if (err) throw err;
-            console.log(`\n ${response.newDept} successfully added to database! \n`);
+            console.log(`\n ${response.newDept} successfully added to database \n`);
             startApp();
         })
     })
@@ -172,7 +172,7 @@ addARole = () => {
             },
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n ${response.title} successfully added to database! \n`);
+                console.log(`\n ${response.title} successfully added to database \n`);
                 startApp();
             })
         })
@@ -226,7 +226,7 @@ addAnEmployee = () => {
                 }, 
                 (err, res) => {
                     if (err) throw err;
-                    console.log(`\n ${response.firstName} ${response.lastName} successfully added to database! \n`);
+                    console.log(`\n ${response.firstName} ${response.lastName} successfully added to database \n`);
                     startApp();
                 })
             })
@@ -266,7 +266,7 @@ updateEmployeeRole = () => {
                 ], 
                 (err, res) => {
                     if (err) throw err;
-                    console.log(`\n Successfully updated employee's role in the database! \n`);
+                    console.log(`\n Successfully updated employee's role in the database \n`);
                     startApp();
                 })
             })
@@ -303,7 +303,7 @@ updateEmployeesManager = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully updated employee's manager in the database! \n`);
+                console.log(`\n Successfully updated employee's manager in the database \n`);
                 startApp();
             })
         })
@@ -330,7 +330,7 @@ removeADepartment = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully removed the department from the database! \n`);
+                console.log(`\n Successfully removed the department from the database \n`);
                 startApp();
             })
         })
@@ -357,7 +357,7 @@ removeARole = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully removed the role from the database! \n`);
+                console.log(`\n Successfully removed the role from the database \n`);
                 startApp();
             })
         })
@@ -384,7 +384,7 @@ removeAnEmployee = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully removed the employee from the database! \n`);
+                console.log(`\n Successfully removed the employee from the database \n`);
                 startApp();
             })
         })

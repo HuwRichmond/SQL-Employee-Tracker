@@ -1,13 +1,5 @@
 # SQL-Employee-Tracker
-> This is a command line application that allows a user to manage information on employees within a company. The application connects to a database housed in MySQL that contains three tables with information on departments, roles, and employees within the company. This Content Management System allows a user to add, view, and modify information about employees of a company.
- 
-## Table of contents
-* [User Story](#user-story)
-* [General Info](#general-info)
-* [Technologies](#technologies)
-* [Video Example](#video-example)
-* [Sources](#sources)
-* [Contact](#contact)
+> This is a MySQL command line application that is designed to display a company database with employee information. The database has the inforamtion on employee name, department, role and salary with functionality to also add line managers for individual employees.
 
 ## User Story
 ```md
@@ -16,29 +8,34 @@ I WANT to be able to view and manage the departments, roles, and employees in my
 SO THAT I can organize and plan my business
 ```
 
-## General Info
-The database was initialized in MySQL Workbench after the schema files were set up (schema files included in repository). Data for employees was then seeded into the database after initialization. Upon running the program via the command line interface, a user can select to view all departments, view all roles, view all employees, add a department, add a role, add an employee, update an employee's current role, update an employee's current manager, remove an employee, remove a department, remove a role, and get the total salary for a specific department. After executing any of the add, update, or remove functions, the database is updated automatically.
+## Acceptance Criteria
 
-## Technologies
-* Javascript
-* Node
-* NPM Inquirer
-* NPM MySQL
-* NPM console.table
-* MySQL
-* MySQL Workbench
+```md
+GIVEN a command-line application that accepts user input
+WHEN I start the application
+THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
+WHEN I choose to view all departments
+THEN I am presented with a formatted table showing department names and department ids
+WHEN I choose to view all roles
+THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
+WHEN I choose to view all employees
+THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
+WHEN I choose to add a department
+THEN I am prompted to enter the name of the department and that department is added to the database
+WHEN I choose to add a role
+THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
+WHEN I choose to add an employee
+THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
+WHEN I choose to update an employee role
+THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
 
 ## Video Example
 [MySQL Employee Management System](https://drive.google.com/file/d/1UCL_nxEFIqdGRJU1OhpODClh0S9xWvKt/view?usp=sharing)
 
 Video recording also saved in Assets folder of SQL-Employee-Tracker Repository.
 
-## Sources
-Application enabled using the following sources:
-
-* [NPM Inquirer](https://github.com/SBoudrias/Inquirer.js/)
-* [NPM MySQL](https://www.npmjs.com/package/mysql)
-* [NPM console.table](https://www.npmjs.com/package/console.table)
-
 ## Contact
 Created by Huw Richmond
+
+https://github.com/HuwRichmond
+

@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samrogers15/MySQL-employee-tracker.git"
+    "url": "git+https://github.com/HuwRichmond/SQL-Employee-Tracker.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/samrogers15/MySQL-employee-tracker/issues"
+    "url": "https://github.com/HuwRichmond/SQL-Employee-Tracker/issues"
   },
-  "homepage": "https://github.com/samrogers15/MySQL-employee-tracker#readme",
+  "homepage": "https://github.com/HuwRichmond/SQL-Employee-Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^8.2.0",
