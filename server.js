@@ -22,7 +22,7 @@ startApp = () => {
         {
             name: 'initialInquiry',
             type: 'rawlist',
-            message: 'Welcome to Employee Tracker, What would you like to do?',
+            message: 'select from the menu items below',
             choices: ['View all departments', 'View all roles', 'View all employees', 'View all employees by manager', 'Add a department', 'Add a role', 'Add an employee', 'Update employee\'s role', 'Update employee\'s manager', 'Remove a department', 'Remove a role', 'Remove an employee', 'View total salary of department', 'Exit program']
         }
     ]).then((response) => {
@@ -68,7 +68,7 @@ startApp = () => {
             break;
             case 'Exit program':
                 connection.end();
-                console.log('\n You have exited the Employee Tracker \n');
+                console.log('\n exited Employee Tracker \n');
                 return;
             default:
                 break;
@@ -127,7 +127,7 @@ addADepartment = () => {
         {
         name: 'newDept',
         type: 'input',
-        message: 'What is the name of the department you want to add?'   
+        message: 'name of department to add'   
         }
     ]).then((response) => {
         connection.query(`INSERT INTO department SET ?`, 
@@ -136,7 +136,7 @@ addADepartment = () => {
         },
         (err, res) => {
             if (err) throw err;
-            console.log(`\n ${response.newDept} successfully added to database \n`);
+            console.log(`\n ${response.newDept} department added to database \n`);
             startApp();
         })
     })
@@ -150,17 +150,17 @@ addARole = () => {
             {
             name: 'title',
             type: 'input',
-            message: 'What is the name of the role you want to add?'   
+            message: 'name of role to add'   
             },
             {
             name: 'salary',
             type: 'input',
-            message: 'What is the salary of the role you want to add?'   
+            message: 'enter salary of the role to add'   
             },
             {
             name: 'deptName',
             type: 'rawlist',
-            message: 'Which department do you want to add the new role to?',
+            message: 'select department to add role to',
             choices: departments
             },
         ]).then((response) => {
@@ -172,7 +172,7 @@ addARole = () => {
             },
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n ${response.title} successfully added to database \n`);
+                console.log(`\n ${response.title} added to database \n`);
                 startApp();
             })
         })
@@ -190,23 +190,23 @@ addAnEmployee = () => {
                 {
                     name: 'firstName',
                     type: 'input',
-                    message: 'What is the new employee\'s first name?'
+                    message: 'enter new employee\'s first name'
                 },
                 {
                     name: 'lastName',
                     type: 'input',
-                    message: 'What is the new employee\'s last name?'
+                    message: 'enter new employee\'s last name'
                 },
                 {
                     name: 'role',
                     type: 'rawlist',
-                    message: 'What is the new employee\'s title?',
+                    message: 'enter new employee\'s title',
                     choices: roles
                 },
                 {
                     name: 'manager',
                     type: 'rawlist',
-                    message: 'Who is the new employee\'s manager?',
+                    message: 'enter new employee\'s line manager?',
                     choices: employees
                 }
             ]).then((response) => {
@@ -226,7 +226,7 @@ addAnEmployee = () => {
                 }, 
                 (err, res) => {
                     if (err) throw err;
-                    console.log(`\n ${response.firstName} ${response.lastName} successfully added to database \n`);
+                    console.log(`\n ${response.firstName} ${response.lastName} added to database \n`);
                     startApp();
                 })
             })
@@ -245,13 +245,13 @@ updateEmployeeRole = () => {
                 {
                     name: 'employee',
                     type: 'rawlist',
-                    message: 'Which employee would you like to update the role for?',
+                    message: 'select employee to update the role',
                     choices: employees
                 },
                 {
                     name: 'newRole',
                     type: 'rawlist',
-                    message: 'What should the employee\'s new role be?',
+                    message: 'enter the new role',
                     choices: roles
                 },
             ]).then((response) => {
@@ -266,7 +266,7 @@ updateEmployeeRole = () => {
                 ], 
                 (err, res) => {
                     if (err) throw err;
-                    console.log(`\n Successfully updated employee's role in the database \n`);
+                    console.log(`\n updated employee role \n`);
                     startApp();
                 })
             })
@@ -282,13 +282,13 @@ updateEmployeesManager = () => {
             {
                 name: 'employee',
                 type: 'rawlist',
-                message: 'Which employee would you like to update the manager for?',
+                message: 'select employee to update the manager',
                 choices: employees
             },
             {
                 name: 'newManager',
                 type: 'rawlist',
-                message: 'Who should the employee\'s new manager be?',
+                message: 'select the new manager for this employee',
                 choices: employees
             },
         ]).then((response) => {
@@ -303,7 +303,7 @@ updateEmployeesManager = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully updated employee's manager in the database \n`);
+                console.log(`\n updated employee's manager \n`);
                 startApp();
             })
         })
@@ -318,7 +318,7 @@ removeADepartment = () => {
             {
             name: 'deptName',
             type: 'rawlist',
-            message: 'Which department would you like to remove?',
+            message: 'select department to remove',
             choices: departments
             },
         ]).then((response) => {
@@ -330,7 +330,7 @@ removeADepartment = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully removed the department from the database \n`);
+                console.log(`\n department removed from database \n`);
                 startApp();
             })
         })
@@ -345,7 +345,7 @@ removeARole = () => {
             {
             name: 'title',
             type: 'rawlist',
-            message: 'Which role would you like to remove?',
+            message: 'select role to remove',
             choices: roles
             },
         ]).then((response) => {
@@ -357,7 +357,7 @@ removeARole = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully removed the role from the database \n`);
+                console.log(`\n removed role from database \n`);
                 startApp();
             })
         })
@@ -372,7 +372,7 @@ removeAnEmployee = () => {
             {
                 name: 'employee',
                 type: 'rawlist',
-                message: 'Which employee would you like to remove?',
+                message: 'select employee to remove',
                 choices: employees
             },
         ]).then((response) => {
@@ -384,7 +384,7 @@ removeAnEmployee = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n Successfully removed the employee from the database \n`);
+                console.log(`\n removed employee from database \n`);
                 startApp();
             })
         })
@@ -399,7 +399,7 @@ viewDepartmentSalary = () => {
             {
             name: 'deptName',
             type: 'rawlist',
-            message: 'Which department would you like to view the total salaries of?',
+            message: 'select department to view total salaries for',
             choices: departments
             },
         ]).then((response) => {
@@ -411,7 +411,7 @@ viewDepartmentSalary = () => {
             ], 
             (err, res) => {
                 if (err) throw err;
-                console.log(`\n The total utilized salary budget of the ${response.deptName} department is $ \n`);
+                console.log(`\n total salary budget for ${response.deptName} is $ \n`);
                 console.table('\n', res, '\n');
                 startApp();
             })
